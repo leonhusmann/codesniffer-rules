@@ -63,7 +63,7 @@ jobs:
         run: "composer normalize --ansi --dry-run"
 
       - name: "Run code style check"
-        run: "composer run-script cs"
+        run: "composer run-script cs-check"
 
   tests:
     name: "Tests"
