@@ -1,0 +1,32 @@
+{
+    "name": "leonhusmann/codesniffer-rules",
+    "description": "Additional PHP_CodeSniffer rules ported from existing PHP-CS-Fixer rules.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CodesnifferRules\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodesnifferRulesTest\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leon Husmann",
+            "email": "git@leonhusmann.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    },
+    "scripts": {
+        "test": "@php -dzend.assertions=1 ./vendor/bin/phpunit --no-coverage",
+        "test-coverage": "@php -dxdebug.mode=coverage -dzend.assertions=1 ./vendor/bin/phpunit"
+    },
+    "require": {
+        "php": "^8.2"
+    }
+}
