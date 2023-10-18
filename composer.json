@@ -39,7 +39,6 @@
     "scripts": {
         "cs-check": "phpcs -s",
         "cs-fix": "phpcbf",
-        "require-checker": "@php -dzend.assertions=-1 vendor/bin/composer-require-checker",
         "test": "@php -dzend.assertions=1 ./vendor/bin/phpunit --no-coverage",
         "test-coverage": "@php -dxdebug.mode=coverage -dzend.assertions=1 ./vendor/bin/phpunit"
     }
