@@ -6,7 +6,7 @@
          defaultTimeLimit="5"
          executionOrder="random"
          enforceTimeLimit="true"
-         cacheResultFile="build/.phpunit.result.cache"
+         cacheResultFile="./build/.phpunit.result.cache"
 >
 
     <php>
