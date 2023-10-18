@@ -26,7 +26,7 @@ We want to add the following rules, feel free to create a issue for the one you 
 - [ ] no_leading_namespace_whitespace
 - [ ] no_mixed_echo_print
 - [ ] no_multiline_whitespace_around_double_arrow
-- [ ] no_short_bool_cast
+- [x] no_short_bool_cast
 - [ ] no_spaces_around_offset
 - [ ] no_superfluous_elseif
 - [ ] no_unneeded_control_parentheses
