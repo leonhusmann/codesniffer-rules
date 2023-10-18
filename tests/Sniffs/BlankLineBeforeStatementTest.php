@@ -25,8 +25,6 @@ class BlankLineBeforeStatementTest extends TestCase
     {
         $report = self::checkFile(__DIR__ . '/../data/BlankLineBeforeStatementTest.MissingNewlineBetween.php');
 
-        var_dump($report->getErrors());
-
         $errors = $report->getErrors();
         self::assertSame([], $errors);
     }
