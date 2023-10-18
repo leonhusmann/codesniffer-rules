@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CodesnifferRulesTest\Sniffs;
 
 use CodesnifferRules\Sniffs\NoShortBoolCast;
@@ -27,7 +29,6 @@ class NoShortBoolCastTest extends TestCase
 
         $errors = $report->getErrors();
         self::assertCount(1, $errors);
-
 
         self::assertSame('Double negation (i.e., "!!") is prohibited.', TestHelper::extractMessage($errors));
     }

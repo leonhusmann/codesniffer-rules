@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CodesnifferRulesTest\Sniffs;
 
 use CodesnifferRules\Sniffs\BlankLineBeforeStatement;
@@ -19,7 +21,6 @@ class BlankLineBeforeStatementTest extends TestCase
         $errors = $report->getErrors();
         self::assertEmpty($errors);
     }
-
 
     public function testDefaultSettingsMissingNewlineBetween(): void
     {
