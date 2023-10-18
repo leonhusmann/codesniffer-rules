@@ -6,7 +6,6 @@
          defaultTimeLimit="5"
          executionOrder="random"
          enforceTimeLimit="true"
-         beStrictAboutCoversAnnotation="true"
          cacheResultFile="build/.phpunit.result.cache"
 >
 
@@ -21,9 +20,6 @@
     </testsuites>
 
     <coverage>
-        <include>
-            <directory>./src</directory>
-        </include>
         <report>
             <clover outputFile="build/coverage/clover.xml"/>
             <xml outputDirectory="build/coverage/coverage-xml/"/>
