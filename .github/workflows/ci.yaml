@@ -180,3 +180,61 @@ jobs:
         with:
           files: "./build/coverage/clover.xml"
           token: "${{ secrets.CODECOV_TOKEN }}"
+
+  static-code-analysis:
+    name: "Static Code Analysis"
+
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        php-version:
+          - "8.2"
+
+        dependencies:
+          - "highest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v3.0.2"
+
+      - name: "Set up PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "xdebug"
+          php-version: "${{ matrix.php-version }}"
+          ini-values: zend.assertions=1
+          tools: composer:v2
+
+      - name: "Setup problem matchers for PHP"
+        run: echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+
+      - name: "Cache dependencies"
+        uses: "actions/cache@v2"
+        with:
+          path: "~/.composer/cache"
+          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}"
+
+      - name: "Install dependencies"
+        run: "composer install --no-interaction --no-progress --ignore-platform-reqs"
+
+      - name: "Update dependencies (lowest)"
+        run: "composer update --no-interaction --no-progress --prefer-lowest --prefer-stable"
+        if: ${{ matrix.dependencies == 'lowest' }}
+
+      - name: "Update dependencies (latest)"
+        run: "composer update --no-interaction --no-progress --no-suggest"
+        if: ${{ matrix.dependencies == 'latest' }}
+
+      - name: "Show dependencies"
+        run: "composer show"
+
+      - name: "Run unit tests with coverage"
+        run: "composer test-coverage"
+
+      - name: "Run phpstan"
+        run: "composer run-script phpstan"
+
+      - name: "Run psalm"
+        run: "composer run-script psalm"

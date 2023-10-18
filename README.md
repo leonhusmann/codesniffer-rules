@@ -1,5 +1,14 @@
 # Custom PHP_CodeSniffer
 
+
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.2-8892BF.svg)](https://www.php.net/releases/8.1/en.php)
+[![Continuous Integration Status](https://github.com/leonhusmann/codesniffer-rules/workflows/CI/badge.svg)](https://github.com/leonhusmann/codesniffer-rules/actions)
+[![Code Coverage](https://codecov.io/gh/leonhusmann/codesniffer-rules/branch/main/graph/badge.svg?token=X)](https://codecov.io/gh/leonhusmann/codesniffer-rules)
+[![Type Coverage](https://shepherd.dev/github/leonhusmann/codesniffer-rules/coverage.svg)](https://shepherd.dev/github/leonhusmann/codesniffer-rules)
+[![Psalm Level](https://shepherd.dev/github/leonhusmann/codesniffer-rules/level.svg)](https://shepherd.dev/github/leonhusmann/codesniffer-rules)
+[![PHPStan Level](https://img.shields.io/badge/PHPStan-Max-brightgreen)](https://shepherd.dev/github/leonhusmann/codesniffer-rules)
+[![License](https://poser.pugx.org/leonhusmann/codesniffer-rules/license)](https://github.com/leonhusmann/codesniffer-rules/blob/main/LICENSE)
+
 Additional PHP_CodeSniffer rules ported from existing PHP-CS-Fixer rules.
 
 ## Tests
